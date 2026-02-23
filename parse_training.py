@@ -64,3 +64,4 @@ if __name__ == '__main__':
     print(f"Epoch数: {len(set(data['epochs']))}")
     print(f"数据已保存到 training_data.json")
 
+

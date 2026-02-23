@@ -96,7 +96,7 @@ body {
 /* ===== Timeline Wrapper ===== */
 .timeline-wrapper {
     display: flex;
-    gap: 48px;
+    gap: 32px;
     align-items: flex-start;
 }
 
@@ -105,7 +105,7 @@ body {
     position: sticky;
     top: 50%;
     transform: translateY(-50%);
-    width: 120px;
+    width: 100px;
     flex-shrink: 0;
     padding: 0;
     align-self: flex-start;
@@ -193,6 +193,7 @@ body {
 .projects-content {
     flex: 1;
     min-width: 0;
+    width: 100%;
 }
 
 .project-section {
@@ -654,6 +655,9 @@ body {
     margin: 0;
     padding: 14px;
     background: transparent;
+    overflow-x: auto;
+    white-space: pre;
+    word-wrap: normal;
 }
 
 .code-panel code {
@@ -661,6 +665,8 @@ body {
     font-size: 0.75rem;
     color: #e5e5e5;
     line-height: 1.65;
+    display: block;
+    min-width: fit-content;
 }
 
 /* ===== 媒体区域 ===== */
@@ -933,6 +939,148 @@ body {
     display: block;
 }
 
+/* GIF展示 */
+.gif-showcase {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.gif-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+}
+
+.gif-tab {
+    flex: 1;
+    padding: 12px 8px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: all 0.2s ease;
+}
+
+.gif-tab:hover {
+    background: var(--bg-alt);
+}
+
+.gif-tab.active {
+    color: var(--text);
+    border-bottom-color: var(--accent);
+    background: var(--card);
+}
+
+.gif-player {
+    position: relative;
+    background: #0a0a0a;
+    min-height: 280px;
+}
+
+.gif-item {
+    display: none;
+}
+
+.gif-item.active {
+    display: block;
+}
+
+.gif-label {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 6px 12px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.9);
+    z-index: 10;
+}
+
+.gif-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* GIF网格展示 */
+.gif-grid-showcase {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.gif-grid-showcase h3 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+}
+
+.gif-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.gif-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.gif-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.gif-card h4 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text);
+    padding: 10px 12px 4px;
+    margin: 0;
+}
+
+.gif-card .gif-desc {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    padding: 0 12px 8px;
+    margin: 0;
+}
+
+.gif-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: #0a0a0a;
+}
+
+/* 仅在电脑端加载的动图占位样式 */
+/* GIF 占位样式（恢复为普通图片即可） */
+
+@media (max-width: 768px) {
+    .gif-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .gif-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* 训练统计 */
 .training-stats {
     display: grid;
@@ -1140,9 +1288,11 @@ body {
         top: 0;
         width: 100%;
         display: flex;
+        flex-direction: row;
         overflow-x: auto;
         padding: 0 0 16px;
         gap: 0;
+        border-bottom: 1px solid var(--border-light);
     }
     
     .timeline-line {
@@ -1165,6 +1315,99 @@ body {
     .project-description {
         border-right: none;
         border-bottom: 1px solid var(--border-light);
+    }
+}
+
+@media (max-width: 640px) {
+    /* 小屏幕时时间线横向放在顶部 */
+    .timeline-wrapper {
+        flex-direction: column;
+        gap: 24px;
+    }
+    
+    .timeline-vertical {
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 0 0 12px 0;
+        border-bottom: 2px solid var(--border-light);
+        border-right: none;
+        margin-left: 0;
+        width: 100%;
+        position: relative;
+        top: 0;
+        align-self: auto;
+        gap: 16px;
+    }
+    
+    .timeline-node {
+        padding: 8px 12px;
+        position: relative;
+        font-size: 0.7rem;
+        white-space: nowrap;
+        cursor: pointer;
+        flex-shrink: 0;
+        text-align: center;
+    }
+    
+    .timeline-node::after {
+        content: '';
+        position: absolute;
+        bottom: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--bg);
+        border: 2px solid var(--border);
+    }
+    
+    .timeline-node.active::after {
+        border-color: var(--accent);
+        background: var(--accent);
+    }
+    
+    .timeline-node .timeline-date {
+        font-size: 0.6rem;
+        display: block;
+        margin-bottom: 2px;
+    }
+    
+    .timeline-node .timeline-name {
+        font-size: 0.7rem;
+        display: block;
+    }
+    
+    /* 项目内容全宽 */
+    .projects-content {
+        width: 100%;
+    }
+    
+    /* 项目卡片全宽 */
+    .project-card {
+        margin: 0;
+    }
+    
+    /* 代码展示区域适配 */
+    .code-showcase {
+        height: 250px;
+    }
+    
+    /* GIF网格单列 */
+    .gif-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    /* 轨迹图单列 */
+    .trajectory-images {
+        flex-direction: column;
+    }
+    
+    /* 视频画廊全宽 */
+    .video-gallery .gif-player {
+        margin-top: 12px;
     }
 }
 
@@ -1201,8 +1444,8 @@ body {
     }
     
     .svg-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 6px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
     }
     
     .back-to-top {
@@ -1210,6 +1453,99 @@ body {
         right: 16px;
         width: 36px;
         height: 36px;
+    }
+    
+    /* 视频和GIF播放器响应式 */
+    .video-player,
+    .gif-player {
+        min-height: auto;
+    }
+    
+    .video-gallery,
+    .gif-grid-showcase {
+        margin-top: 20px;
+    }
+    
+    /* 轨迹图响应式 */
+    .trajectory-images {
+        gap: 8px;
+    }
+    
+    .trajectory-item img {
+        min-height: 150px;
+    }
+    
+    /* 代码展示响应式 */
+    .code-showcase {
+        height: 300px;
+    }
+    
+    .code-content {
+        font-size: 0.7rem;
+    }
+    
+    /* 信息网格响应式 */
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    /* 技术区块响应式 */
+    .tech-section {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    /* SAM图片网格响应式 */
+    .sam-images {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    
+    /* 训练图表响应式 */
+    .training-charts {
+        grid-template-columns: 1fr;
+    }
+    
+    /* 代码块响应式 */
+    .code-block {
+        font-size: 0.7rem;
+    }
+    
+    /* 项目描述全宽 */
+    .project-description-full {
+        padding: 16px;
+    }
+    
+    /* 架构图响应式 */
+    .arch-layer {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .arch-label {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .arch-boxes {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .arch-boxes-4 {
+        padding-left: 0;
+    }
+    
+    .arch-box {
+        font-size: 0.65rem;
+        padding: 6px 10px;
+    }
+    
+    /* 代码块响应式 */
+    pre code {
+        font-size: 0.65rem;
     }
 }
 
@@ -1236,4 +1572,49 @@ body {
 ::selection {
     background: var(--accent);
     color: #fff;
+}
+
+/* ===== 小屏进一步优化：避免横向滚动，内容完整显示 ===== */
+@media (max-width: 640px) {
+    /* 整体禁止横向滚动 */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* 大流程图：取消最小宽度，手机端等比缩放即可 */
+    .workflow-diagram-large img {
+        min-width: 0;
+        width: 100%;
+    }
+
+    /* 双黑洞轨迹图：限制高度，避免一屏占太多空间 */
+    .trajectory-item img {
+        min-height: 0;
+        max-height: 220px;
+        object-fit: contain;
+    }
+
+    /* 代码查看器：高度改为自适应，内部滚动，而不是撑宽页面 */
+    .code-viewer {
+        height: auto;
+        max-height: 320px;
+    }
+
+    .code-panel pre {
+        white-space: pre-wrap;
+        word-break: break-all;
+    }
+
+    /* 顶部时间线：在窄屏上稍微压缩间距和字号，防止挤不下 */
+    .timeline-node {
+        padding: 6px 10px;
+    }
+
+    .timeline-time {
+        font-size: 0.6rem;
+    }
+
+    .timeline-name {
+        font-size: 0.7rem;
+    }
 }

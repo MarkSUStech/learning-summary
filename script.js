@@ -114,6 +114,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // （已恢复为直接加载 GIF，不再做点击按需加载）
+
     // 视频展示切换
     const videoTabs = document.querySelectorAll('.video-tab');
     const videoItems = document.querySelectorAll('.video-item');
@@ -171,24 +173,24 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-});
 
-// 返回顶部按钮
-const backToTopButton = document.getElementById('backToTop');
+    // 返回顶部按钮
+    const backToTopButton = document.getElementById('backToTop');
 
-window.addEventListener('scroll', function() {
-    if (window.pageYOffset > 300) {
-        backToTopButton.classList.add('show');
-    } else {
-        backToTopButton.classList.remove('show');
-    }
-});
-
-backToTopButton.addEventListener('click', function() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
     });
-});
 
-// 训练图表已使用静态图片，无需动态加载
+    backToTopButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // 训练图表已使用静态图片，无需动态加载
+});
