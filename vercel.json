@@ -6,12 +6,6 @@
       "use": "@vercel/static"
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -23,7 +17,7 @@
       ]
     },
     {
-      "source": "/(.*\\.(mp4|webm|ogg))",
+      "source": "/(.*).(mp4|webm|ogg)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -37,4 +31,3 @@
     }
   ]
 }
-
