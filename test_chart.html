@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图表测试</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        body {
+            background: #0f172a;
+            color: white;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .chart-container {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            height: 300px;
+        }
+        #status {
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>图表测试页面</h1>
+    <div id="status">正在加载...</div>
+    <div class="chart-container">
+        <canvas id="testChart"></canvas>
+    </div>
+
+    <script>
+        function updateStatus(msg) {
+            document.getElementById('status').textContent = msg;
+            console.log(msg);
+        }
+
+        updateStatus('检查Chart.js...');
+        
+        if (typeof Chart === 'undefined') {
+            updateStatus('错误: Chart.js未加载');
+        } else {
+            updateStatus('Chart.js已加载，版本: ' + Chart.version);
+            
+            setTimeout(() => {
+                updateStatus('开始创建测试图表...');
+                const ctx = document.getElementById('testChart');
+                if (!ctx) {
+                    updateStatus('错误: Canvas元素未找到');
+                    return;
+                }
+                
+                try {
+                    new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: ['1', '2', '3', '4', '5'],
+                            datasets: [{
+                                label: '测试数据',
+                                data: [1, 2, 3, 2, 1],
+                                borderColor: 'rgb(99, 102, 241)',
+                                backgroundColor: 'rgba(99, 102, 241, 0.1)',
+                                tension: 0.4
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    labels: {
+                                        color: '#cbd5e1'
+                                    }
+                                }
+                            },
+                            scales: {
+                                x: {
+                                    ticks: { color: '#94a3b8' },
+                                    grid: { color: 'rgba(148, 163, 184, 0.1)' }
+                                },
+                                y: {
+                                    ticks: { color: '#94a3b8' },
+                                    grid: { color: 'rgba(148, 163, 184, 0.1)' }
+                                }
+                            }
+                        }
+                    });
+                    updateStatus('测试图表创建成功！');
+                } catch (error) {
+                    updateStatus('错误: ' + error.message);
+                    console.error(error);
+                }
+            }, 500);
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>测试页面</title>
+</head>
+<body>
+    <h1>资源文件测试</h1>
+    <ul>
+        <li>CSS文件: <span id="css-status">检查中...</span></li>
+        <li>JS文件: <span id="js-status">检查中...</span></li>
+        <li>视频文件1: <span id="video1-status">检查中...</span></li>
+    </ul>
+    <script>
+        // 检查CSS
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'styles.css';
+        link.onload = () => document.getElementById('css-status').textContent = '✓ 已加载';
+        link.onerror = () => document.getElementById('css-status').textContent = '✗ 加载失败';
+        document.head.appendChild(link);
+        
+        // 检查JS
+        const script = document.createElement('script');
+        script.src = 'script.js';
+        script.onload = () => document.getElementById('js-status').textContent = '✓ 已加载';
+        script.onerror = () => document.getElementById('js-status').textContent = '✗ 加载失败';
+        document.body.appendChild(script);
+        
+        // 检查视频
+        const video = document.createElement('video');
+        video.src = '中国象棋 2026-02-21 15-24-41.mp4';
+        video.onloadeddata = () => document.getElementById('video1-status').textContent = '✓ 已加载';
+        video.onerror = () => document.getElementById('video1-status').textContent = '✗ 加载失败';
+    </script>
+</body>
+</html>
+

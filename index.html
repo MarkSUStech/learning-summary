@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学期与寒假学习总结</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="title">学期与寒假学习总结</h1>
+            <p class="subtitle">秋季学期及寒假期间的学习过程与实践记录</p>
+            <div class="summary-intro">
+                <p>本报告记录了我在秋季学期和寒假期间的主要学习内容与实践项目。通过理论学习与实际项目相结合的方式，我在AI应用、图形处理、编辑器开发等方面进行了探索与实践，现将学习过程与心得体会总结如下。</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="timeline-wrapper">
+                <!-- 左侧竖向时间轴 -->
+                <aside class="timeline-vertical">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="timeline-node" data-target="#imed">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-label">
+                            <span class="timeline-time">暑假 - 大一上</span>
+                            <span class="timeline-name">图形绘制工具</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-node" data-target="#xiangqi">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-label">
+                            <span class="timeline-time">秋季学期</span>
+                            <span class="timeline-name">中国象棋</span>
+                            <span class="timeline-tag">满分</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-node" data-target="#asc-competition">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-label">
+                            <span class="timeline-time">寒假</span>
+                            <span class="timeline-name">ASC超算竞赛</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-node" data-target="#latex-editor">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-label">
+                            <span class="timeline-time">寒假</span>
+                            <span class="timeline-name">LaTeX 编辑器</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-node" data-target="#ai-svg">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-label">
+                            <span class="timeline-time">寒假</span>
+                            <span class="timeline-name">Text-to-SVG</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-node" data-target="#myagent">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-label">
+                            <span class="timeline-time">寒假</span>
+                            <span class="timeline-name">MyAgent</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-node" data-target="#future-plan">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-label">
+                            <span class="timeline-time">正在进行</span>
+                            <span class="timeline-name">项目</span>
+                        </div>
+                    </div>
+                </aside>
+                
+                <!-- 右侧项目内容 -->
+                <div class="projects-content">
+                    
+                    <!-- 图形绘制工具 - 暑假到大一上 -->
+                    <section class="project-section" id="imed">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <span class="project-number">01</span>
+                                <h2 class="project-title">矢量几何图形工具开发</h2>
+                            </div>
+                            <div class="project-content project-content-full">
+                                <div class="project-description-full">
+                                    <div class="info-grid">
+                                        <div class="info-block">
+                                            <h3>项目背景</h3>
+                                            <p>这是一个专业的矢量图形编辑工具项目，旨在为图像分割提供专业级交互工具，同时为图文编辑软件建立基础功能。项目使用Qt/QML框架开发，重点实现了一套完整的图形编辑架构。</p>
+                                        </div>
+                                        <div class="info-block">
+                                            <h3>项目用途</h3>
+                                            <p>为图像分割标注工具提供专业级的矢量图形交互能力，同时为后续图文编辑软件开发奠定基础。通过这个项目深入理解了专业图形软件的架构设计和技术实现。</p>
+                                            <div class="project-links" style="margin-top: 12px; padding-top: 0; border-top: none;">
+                                                <span class="project-path">📁 项目路径: C:\Projects\imed</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tech-section">
+                                        <div class="tech-column">
+                                            <h3>核心架构</h3>
+                                            <ul>
+                                                <li><strong>ZoomableView</strong> — 视图交互架构，实现缩放、平移、自适应</li>
+                                                <li><strong>GraphicsTool</strong> — 工具交互架构，支持矩形、椭圆、多边形等</li>
+                                                <li><strong>GridSnap/ObjectSnap</strong> — 对齐架构，精确位置控制</li>
+                                                <li><strong>Undo/Redo</strong> — 基于QUndoGroup的撤销重做服务</li>
+                                                <li><strong>Path编辑</strong> — 复刻Figma操作，节点选择与控制</li>
+                                            </ul>
+                                        </div>
+                                        <div class="tech-column">
+                                            <h3>核心算法</h3>
+                                            <ul>
+                                                <li><strong>Bezier分割</strong> — de Casteljau算法曲线分割</li>
+                                                <li><strong>B样条拟合</strong> — 三次样条曲线插值生成</li>
+                                                <li><strong>曲线平滑</strong> — 控制点对称化处理</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="architecture-section">
+                                        <h3>项目架构</h3>
+                                        <div class="arch-diagram">
+                                            <div class="arch-layer">
+                                                <div class="arch-label">UI Layer</div>
+                                                <div class="arch-boxes">
+                                                    <div class="arch-box arch-box-ui">ZoomableView</div>
+                                                    <div class="arch-box arch-box-ui">ToolManager</div>
+                                                    <div class="arch-box arch-box-ui">DesignView</div>
+                                                </div>
+                                            </div>
+                                            <div class="arch-arrow">▼</div>
+                                            <div class="arch-layer">
+                                                <div class="arch-label">Tool Layer</div>
+                                                <div class="arch-boxes">
+                                                    <div class="arch-box arch-box-tool">GraphicsTool</div>
+                                                    <div class="arch-box arch-box-tool">PathTool</div>
+                                                    <div class="arch-box arch-box-tool">SelectionTool</div>
+                                                </div>
+                                            </div>
+                                            <div class="arch-arrow">▼</div>
+                                            <div class="arch-layer">
+                                                <div class="arch-label">Model Layer</div>
+                                                <div class="arch-boxes">
+                                                    <div class="arch-box arch-box-model">GraphicsObject</div>
+                                                    <div class="arch-box arch-box-model">PathCurve</div>
+                                                    <div class="arch-box arch-box-model">ModelEdit</div>
+                                                </div>
+                                            </div>
+                                            <div class="arch-arrow">▼</div>
+                                            <div class="arch-layer">
+                                                <div class="arch-label">Core Layer</div>
+                                                <div class="arch-boxes arch-boxes-4">
+                                                    <div class="arch-box arch-box-core">Bezier</div>
+                                                    <div class="arch-box arch-box-core">SplineCurve</div>
+                                                    <div class="arch-box arch-box-core">OrthoSnapper</div>
+                                                    <div class="arch-box arch-box-core">UndoService</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="code-section-full">
+                                    <div class="code-viewer" id="codeViewer">
+                                        <div class="code-sidebar">
+                                            <div class="code-tab active" data-target="code-zoomable">
+                                                <span class="code-tab-icon">⊖</span>
+                                                <span class="code-tab-text">ZoomableView</span>
+                                            </div>
+                                            <div class="code-tab" data-target="code-tool">
+                                                <span class="code-tab-icon">✦</span>
+                                                <span class="code-tab-text">GraphicsTool</span>
+                                            </div>
+                                            <div class="code-tab" data-target="code-bezier">
+                                                <span class="code-tab-icon">∿</span>
+                                                <span class="code-tab-text">Bezier分割</span>
+                                            </div>
+                                            <div class="code-tab" data-target="code-spline">
+                                                <span class="code-tab-icon">≈</span>
+                                                <span class="code-tab-text">B样条插值</span>
+                                            </div>
+                                            <div class="code-tab" data-target="code-snap">
+                                                <span class="code-tab-icon">⊞</span>
+                                                <span class="code-tab-text">OrthoSnapper</span>
+                                            </div>
+                                        </div>
+                                        <div class="code-content">
+                                            <div class="code-panel active" id="code-zoomable">
+                                                <div class="code-header">
+                                                    <span class="code-file">zoomableview.h</span>
+                                                    <span class="code-desc">视图交互架构</span>
+                                                </div>
+                                                <pre><code>class ZoomableView : public QQuickPaintedItem {
+    Q_PROPERTY(qreal zoomFactor READ zoomFactor WRITE setZoomFactor)
+    Q_PROPERTY(QRectF contentRect READ contentRect WRITE setContentRect)
+    Q_PROPERTY(qreal minZoomFactor READ minZoomFactor WRITE setMinZoomFactor)
+    Q_PROPERTY(qreal maxZoomFactor READ maxZoomFactor WRITE setMaxZoomFactor)
+    
+    // 视图变换
+    void zoom(qreal scale, qreal cx, qreal cy);
+    void zoomFit(const QRectF &bounds);
+    void zoomIn();
+    void zoomOut();
+    void fitToWidth();
+    void fitToContent();
+    
+    // 坐标映射
+    QPointF mapFromContent(const QPointF &point);
+    QPointF mapToContent(const QPointF &point);
+    QRectF mapRectFromContent(const QRectF &rect);
+    QRectF mapRectToContent(const QRectF &rect);
+};</code></pre>
+                                            </div>
+                                            <div class="code-panel" id="code-tool">
+                                                <div class="code-header">
+                                                    <span class="code-file">graphicstool.h</span>
+                                                    <span class="code-desc">工具交互架构</span>
+                                                </div>
+                                                <pre><code>class GraphicsTool : public Tool {
+    // 图形工具基类
+    void paint(QPainter *painter) override;
+};
+
+class RectangleTool : public GraphicsTool {
+    // 矩形工具
+    void createPath(QPainterPath &path, const QRectF &rect);
+};
+class EllipseTool : public RectangleTool { /* 椭圆 */ };
+class PolygonTool : public RectangleTool { /* 多边形 */ };
+class StarTool : public RectangleTool { /* 星形 */ };
+
+class PenTool : public PathTool { /* 钢笔工具 - 贝塞尔 */ };
+class PencilTool : public PathTool { /* 铅笔工具 - 自由绘制 */ };
+class SplineTool : public PathTool { /* 样条工具 - B样条 */ };</code></pre>
+                                            </div>
+                                            <div class="code-panel" id="code-bezier">
+                                                <div class="code-header">
+                                                    <span class="code-file">bezier.cpp</span>
+                                                    <span class="code-desc">de Casteljau 分割算法</span>
+                                                </div>
+                                                <pre><code>void Bezier::splitAt(qreal t, Bezier *left, Bezier *right) const {
+    // de Casteljau 算法实现曲线分割
+    left->x1 = x1;
+    left->x2 = x1 + t * (x2 - x1);
+    left->x3 = x2 + t * (x3 - x2);
+    right->x3 = x3 + t * (x4 - x3);
+    right->x4 = x4;
+    
+    right->x2 = left->x3 + t * (right->x3 - left->x3);
+    left->x3 = left->x2 + t * (left->x3 - left->x2);
+    
+    // 中间连接点
+    left->x4 = right->x1 = left->x3 + t * (right->x2 - left->x3);
+}
+
+QPointF Bezier::pointAt(qreal t) const {
+    qreal a, b, c, d;
+    coefficients(t, a, b, c, d);
+    return QPointF(a*x1 + b*x2 + c*x3 + d*x4,
+                   a*y1 + b*y2 + c*y3 + d*y4);
+}</code></pre>
+                                            </div>
+                                            <div class="code-panel" id="code-spline">
+                                                <div class="code-header">
+                                                    <span class="code-file">splinecurve.h</span>
+                                                    <span class="code-desc">三次B样条曲线插值</span>
+                                                </div>
+                                                <pre><code>class SplineCurve2D : public SplineCurve {
+    // 点集插值生成B样条
+    bool interpolate(const double *points, int count,
+        int flag = Open,             // Open/Closed/Periodic
+        int parametrization = Chord, // 弦长参数化
+        int order = Cubic);          // 三次样条
+    
+    // 转换为Bezier序列便于渲染
+    bool convertToBeziers();
+};
+
+void SplineToolPrivate::updatePath() {
+    SplineCurve2D curve;
+    curve.interpolate(&samples[0].rx(), count, 
+        closedFlag, SplineCurve::Chord);
+    curve.convertToBeziers();
+}</code></pre>
+                                            </div>
+                                            <div class="code-panel" id="code-snap">
+                                                <div class="code-header">
+                                                    <span class="code-file">orthosnapper.cpp</span>
+                                                    <span class="code-desc">对象对齐吸附架构</span>
+                                                </div>
+                                                <pre><code>class OrthoSnapper {
+    // 添加对齐目标
+    void addTarget(const QPointF &point);
+    void addTarget(const QRectF &rect);
+    
+    // 执行吸附
+    void snapPoint(const QPointF &p);
+    void snapRect(const QRectF &r);
+    
+    // 获取结果
+    bool hasX() const;
+    qreal deltaX() const;
+    qreal targetX() const;
+};
+
+// 使用示例
+OrthoSnapper snapper(5.0);
+snapper.addTarget(otherRect);
+snapper.snapPoint(currentPos);
+if (snapper.hasX()) { /* 绘制对齐线 */ }</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="video-section">
+                                        <h3>功能演示</h3>
+                                        <div class="video-showcase">
+                                            <div class="video-tabs">
+                                                <div class="video-tab active" data-video="video-pen">钢笔工具</div>
+                                                <div class="video-tab" data-video="video-spline">B样条曲线</div>
+                                                <div class="video-tab" data-video="video-brush">画笔拟合</div>
+                                                <div class="video-tab" data-video="video-shapes">几何图形</div>
+                                                <div class="video-tab" data-video="video-matrix">变换工具</div>
+                                                <div class="video-tab" data-video="video-undo">撤销重做</div>
+                                            </div>
+                                            <div class="video-player">
+                                                <div class="video-item active" id="video-pen">
+                                                    <div class="video-label">钢笔工具 — 贝塞尔曲线编辑</div>
+                                                    <video autoplay loop muted playsinline>
+                                                        <source src="钢笔工具_final.mp4?v=2" type="video/mp4">
+                                                    </video>
+                                                </div>
+                                                <div class="video-item" id="video-spline">
+                                                    <div class="video-label">B样条曲线 — 基于点集插值生成平滑曲线</div>
+                                                                                                    <video loop muted playsinline preload="auto">
+                                                                                                        <source src="B样条曲线_final.mp4?v=2" type="video/mp4">
+                                                                                                    </video>                                                </div>
+                                                <div class="video-item" id="video-brush">
+                                                    <div class="video-label">画笔与曲线拟合 — 自由绘制自动拟合为平滑曲线</div>
+                                                                                                    <video loop muted playsinline preload="auto">
+                                                                                                        <source src="画笔与曲线拟合.mp4?v=2" type="video/mp4">
+                                                                                                    </video>                                                </div>
+                                                <div class="video-item" id="video-shapes">
+                                                    <div class="video-label">圆和星型 — 参数化几何图形绘制</div>
+                                                                                                    <video loop muted playsinline preload="auto">
+                                                                                                        <source src="圆和星型_final.mp4?v=2" type="video/mp4">
+                                                                                                    </video>                                                </div>
+                                                <div class="video-item" id="video-matrix">
+                                                    <div class="video-label">矩阵工具及圆角 — 变换与圆角矩形</div>
+                                                                                                    <video loop muted playsinline preload="auto">
+                                                                                                        <source src="矩阵工具及圆角.mp4?v=2" type="video/mp4">
+                                                                                                    </video>                                                </div>
+                                                <div class="video-item" id="video-undo">
+                                                    <div class="video-label">撤销重做 — 基于命令模式的操作历史</div>
+                                                                                                    <video loop muted playsinline preload="auto">
+                                                                                                        <source src="undoredo_final.mp4?v=2" type="video/mp4">
+                                                                                                    </video>                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 中国象棋 - 秋季学期 -->
+                    <section class="project-section" id="xiangqi">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <span class="project-number">02</span>
+                                <h2 class="project-title">中国象棋游戏开发<span class="project-subtitle">— Java课程满分Project</span></h2>
+                            </div>
+                            <div class="project-content">
+                                <div class="project-description">
+                                    <div class="learning-context">
+                                        <h3>项目背景</h3>
+                                        <p>这是学校的课程项目，要求使用Java开发一个完整的游戏系统。项目需要实现完整的象棋规则、网络对战功能以及基本的AI算法。最终该项目获得满分评价。</p>
+                                    </div>
+                                    <div class="project-details">
+                                        <h3>主要学习内容</h3>
+                                        <ul>
+                                            <li>实现完整的象棋规则和基本AI算法</li>
+                                            <li>实现客户端-服务器架构的设计</li>
+                                            <li>实现网络编程和Socket通信</li>
+                                            <li>实现JavaFX界面开发和基础UI设计</li>
+                                            <li>实现游戏记录和回放功能</li>
+                                            <li>实现基础的AI算法</li>
+                                        </ul>
+                                        <div class="learning-reflection">
+                                            <h3>项目总结</h3>
+                                            <p>这个项目让我对Java开发有了更全面的认识，特别是在网络编程和游戏逻辑实现方面。通过实现象棋规则和网络对战功能，我理解了如何将理论知识应用到实际项目中。虽然AI算法还比较简单，但这个过程让我对算法设计有了初步的了解。</p>
+                                        </div>
+                                        <div class="project-links">
+                                            <span class="project-path">📁 项目路径: C:\Users\mark0\IdeaProjects\ChineseXiangqi 2.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-media">
+                                    <div class="video-gallery">
+                                        <h3>演示视频</h3>
+                                        <div class="video-grid">
+                                            <div class="video-card">
+                                                <h4>游戏演示 1</h4>
+                                                <video controls preload="metadata">
+                                                    <source src="中国象棋 2026-02-21 15-24-41.mp4" type="video/mp4">
+                                                </video>
+                                            </div>
+                                            <div class="video-card">
+                                                <h4>游戏演示 2</h4>
+                                                <video controls preload="metadata">
+                                                    <source src="中国象棋 2026-02-21 15-32-47.mp4" type="video/mp4">
+                                                </video>
+                                            </div>
+                                            <div class="video-card">
+                                                <h4>服务器控制台</h4>
+                                                <video controls preload="metadata">
+                                                    <source src="中国象棋服务器控制台 2026-02-21 15-30-45.mp4" type="video/mp4">
+                                                </video>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ASC26超算竞赛 -->
+                    <section class="project-section" id="asc-competition">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <span class="project-number">03</span>
+                                <h2 class="project-title">ASC26超算竞赛</h2>
+                            </div>
+                            <div class="project-content project-content-single">
+                                <div class="project-description">
+                                    <div class="info-grid">
+                                        <div class="info-block">
+                                            <h3>竞赛背景</h3>
+                                            <p>ASC世界大学生超级计算机竞赛（ASC Student Supercomputer Challenge）是全球规模最大的超算竞赛。第13届ASC26竞赛吸引了全球数百支高校队伍参加，初赛阶段要求参赛队伍完成AI与HPC集群设计、基准测试优化、具身智能世界模型优化以及数值相对论代码优化等挑战。</p>
+                                        </div>
+                                        <div class="info-block">
+                                            <h3>参赛收获</h3>
+                                            <p>通过参与ASC26初赛，深入了解了高性能计算集群的设计原理、GPU并行优化技术，以及科学计算领域的前沿应用。特别是第四题的双黑洞合并模拟，让我接触到了引力波探测和数值相对论这一物理学前沿领域。</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="project-details" style="margin-top: 20px;">
+                                        <h3>第四题：数值相对论代码AMSS-NCKU优化</h3>
+                                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">本题目要求优化开源数值相对论代码AMSS-NCKU，模拟双黑洞合并过程并生成引力波波形。</p>
+                                        
+                                        <div class="asc-problem-details" style="background: #f8fafc; border-radius: var(--radius); padding: 16px 18px; margin-top: 12px;">
+                                            <h4 style="font-size: 0.7rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">问题描述</h4>
+                                            <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+                                                广义相对论是描述引力的基础理论，其控制方程——爱因斯坦场方程是物理学中最具挑战性的偏微分方程系统之一。2015年LIGO首次探测到引力波（GW150914），开启了引力波天文学时代。为了分析引力波探测数据，需要获得爱因斯坦场方程的精确数值解。
+                                            </p>
+                                            <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+                                                AMSS-NCKU是一款开源数值相对论代码，采用有限差分法求解爱因斯坦场方程，使用自适应网格细化（AMR）技术处理多尺度问题，并通过MPI并行化实现分布式计算。代码分为两个阶段：首先求解椭圆型方程生成初始数据，然后求解双曲型方程进行时空演化。
+                                            </p>
+                                            
+                                            <h4 style="font-size: 0.7rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin: 16px 0 12px;">优化目标</h4>
+                                            <ul style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7; padding-left: 18px;">
+                                                <li>优化双黑洞合并模拟（对应GW150914事件，质量分别为36M☉和29M☉）</li>
+                                                <li>在保持精度的前提下提升计算性能</li>
+                                                <li>双黑洞轨迹的RMS误差必须低于1%</li>
+                                                <li>约束违反值的绝对值不得超过2</li>
+                                            </ul>
+                                            
+                                            <h4 style="font-size: 0.7rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin: 16px 0 12px;">技术要点</h4>
+                                            <ul style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7; padding-left: 18px;">
+                                                <li><strong>计算瓶颈</strong>：Runge-Kutta时间积分步骤、多网格细化层级间的数据通信与同步</li>
+                                                <li><strong>复杂性</strong>：爱因斯坦场方程涉及数十个未知变量，时空演化的计算量占主导地位</li>
+                                                <li><strong>并行策略</strong>：域分解 + MPI并行化</li>
+                                                <li><strong>精度控制</strong>：使用4阶有限差分格式平衡计算成本与精度</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="asc-results" style="margin-top: 20px;">
+                                            <h4 style="font-size: 0.7rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">运行结果</h4>
+                                            <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+                                                成功运行了双黑洞合并模拟，生成了黑洞轨迹图。模拟再现了GW150914事件中两个黑洞相互旋进、合并的动力学过程。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="trajectory-section" style="padding: 24px; background: var(--bg-alt); border-top: 1px solid var(--border);">
+                                <h3 style="font-size: 0.7rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;">双黑洞轨迹模拟结果</h3>
+                                <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 16px;">GW150914双黑洞合并过程的空间轨迹（XY平面投影）</p>
+                                <div class="trajectory-images-row" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+                                    <div class="trajectory-item" style="background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;">
+                                        <img src="bh_trajectory_xy.png" alt="双黑洞轨迹" style="width: 100%; height: auto; display: block;" />
+                                        <span class="trajectory-label" style="display: block; padding: 10px 12px; font-size: 0.75rem; color: var(--text-secondary); text-align: center; background: var(--bg); border-top: 1px solid var(--border);">完整轨迹 XY平面</span>
+                                    </div>
+                                    <div class="trajectory-item" style="background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;">
+                                        <img src="bh_trajectory_21_xy.png" alt="双黑洞轨迹细节" style="width: 100%; height: auto; display: block;" />
+                                        <span class="trajectory-label" style="display: block; padding: 10px 12px; font-size: 0.75rem; color: var(--text-secondary); text-align: center; background: var(--bg); border-top: 1px solid var(--border);">旋进阶段细节</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- LaTeX Editor - 寒假 -->
+                    <section class="project-section" id="latex-editor">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <span class="project-number">04</span>
+                                <h2 class="project-title">LaTeX编辑器开发</h2>
+                            </div>
+                            <div class="project-content">
+                                <div class="project-description">
+                                    <div class="learning-context">
+                                        <h3>项目背景</h3>
+                                        <p>在实践Qt框架和C++开发的过程中，我尝试开发一个基础的LaTeX编辑器，主要目的是实现GUI应用程序开发、文本编辑器的基本功能，以及LaTeX编译和渲染的相关技术。</p>
+                                    </div>
+                                    <div class="project-details">
+                                        <h3>主要学习内容</h3>
+                                        <ul>
+                                            <li>实现Qt框架的界面开发</li>
+                                            <li>实现实时LaTeX编译预览（WYSIWYG）</li>
+                                            <li>实现语法高亮和代码编辑器功能</li>
+                                            <li>实现数学公式可视化编辑</li>
+                                            <li>实现PDF导出功能</li>
+                                            <li>实现MicroTeX和YAWYSIWYGEE等渲染引擎的集成</li>
+                                        </ul>
+                                        <div class="learning-reflection">
+                                            <h3>项目总结</h3>
+                                            <p>这个项目让我对桌面应用程序开发有了更深入的理解，特别是在处理复杂文本编辑和实时渲染方面。在开发过程中遇到了不少技术难点，通过查阅资料和不断调试，逐步解决了这些问题，这个过程让我对软件开发有了更实际的认识。</p>
+                                        </div>
+                                        <div class="project-links">
+                                            <span class="project-path">📁 项目路径: C:\Users\mark0\Run\LaTeXEditor</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-media">
+                                    <div class="video-gallery">
+                                        <h3>编辑器演示</h3>
+                                        <div class="video-grid">
+                                            <div class="video-card">
+                                                <h4>LaTeX Editor 演示</h4>
+                                                <video controls preload="metadata">
+                                                    <source src="%F0%9F%93%9D%20LaTeX%20Editor.mp4" type="video/mp4">
+                                                </video>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- AI SVG - 寒假 -->
+                    <section class="project-section" id="ai-svg">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <span class="project-number">05</span>
+                                <h2 class="project-title">AI SVG生成模型训练</h2>
+                            </div>
+                            <div class="project-content">
+                                <div class="project-description">
+                                    <div class="learning-context">
+                                        <h3>项目背景</h3>
+                                        <p>为了实践文本到图像生成的相关技术，我尝试使用SVGX数据集训练一个基础的SVG图像生成模型。这是一个探索性的项目，主要目的是实现模型训练的基本流程和文本到图形生成的基本原理。</p>
+                                    </div>
+                                    <div class="project-details">
+                                        <h3>主要学习内容</h3>
+                                        <ul>
+                                            <li>实现SVGX-SFT数据集的模型微调</li>
+                                            <li>实现DeepSeek模型的基本使用</li>
+                                            <li>实现文本到SVG生成的流程</li>
+                                            <li>实现图标库数据处理（Material Design Icons、Tabler Icons）</li>
+                                        </ul>
+                                        <div class="learning-reflection">
+                                            <h3>项目总结</h3>
+                                            <p>通过训练过程，我初步实现了模型训练的基本步骤，包括数据准备、模型配置、训练监控等。训练过程中Loss值从0.6683降低到0.3057，降低了约54%，虽然模型还比较简单，但这个过程让我对机器学习有了更直观的认识。生成的SVG图像质量还有待提升，需要进一步优化模型和参数调优。</p>
+                                        </div>
+                                        <div class="project-links">
+                                            <span class="project-path">📁 项目路径: C:\Users\mark0\Run\ai</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-media">
+                                    <div class="training-charts">
+                                        <h3>训练过程可视化</h3>
+                                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 16px;">以下展示的是训练过程中的部分数据</p>
+                                        <div class="training-stats">
+                                            <div class="stat-item">
+                                                <span class="stat-label">训练轮数:</span>
+                                                <span class="stat-value">3 epochs (13-15)</span>
+                                            </div>
+                                            <div class="stat-item">
+                                                <span class="stat-label">总批次数:</span>
+                                                <span class="stat-value">3357</span>
+                                            </div>
+                                            <div class="stat-item">
+                                                <span class="stat-label">初始Loss:</span>
+                                                <span class="stat-value">0.6683</span>
+                                            </div>
+                                            <div class="stat-item">
+                                                <span class="stat-label">最终Loss:</span>
+                                                <span class="stat-value">0.3057</span>
+                                            </div>
+                                            <div class="stat-item">
+                                                <span class="stat-label">Loss降低:</span>
+                                                <span class="stat-value">54.26%</span>
+                                            </div>
+                                        </div>
+                                        <div class="chart-container">
+                                            <img src="loss_chart.png" alt="训练Loss曲线" style="width: 100%; height: auto; display: block;" />
+                                        </div>
+                                        <div class="chart-container">
+                                            <img src="lr_chart.png" alt="学习率变化曲线" style="width: 100%; height: auto; display: block;" />
+                                        </div>
+                                    </div>
+                                    <div class="svg-gallery">
+                                        <h3>Text-to-SVG 生成结果</h3>
+                                        <div class="svg-grid">
+                                            <div class="svg-item">
+                                                <h4>红色圆形</h4>
+                                                <div class="svg-preview">
+                                                    <img src="redcircle.svg" alt="红色圆形" />
+                                                </div>
+                                            </div>
+                                            <div class="svg-item">
+                                                <h4>黄色星星</h4>
+                                                <div class="svg-preview">
+                                                    <img src="yellowstar.svg" alt="黄色星星" />
+                                                </div>
+                                            </div>
+                                            <div class="svg-item">
+                                                <h4>紫色爱心</h4>
+                                                <div class="svg-preview">
+                                                    <img src="purpleheart.svg" alt="紫色爱心" />
+                                                </div>
+                                            </div>
+                                            <div class="svg-item">
+                                                <h4>蓝色矩形</h4>
+                                                <div class="svg-preview">
+                                                    <img src="bluerectangle.svg" alt="蓝色矩形" />
+                                                </div>
+                                            </div>
+                                            <div class="svg-item">
+                                                <h4>绿色三角形</h4>
+                                                <div class="svg-preview">
+                                                    <img src="greentriangle.svg" alt="绿色三角形" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p style="font-size: 0.9rem; margin-top: 15px; color: var(--text-secondary);">
+                                            以上SVG图像均由AI模型根据文本描述自动生成
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- MyAgent - 寒假 -->
+                    <section class="project-section" id="myagent">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <span class="project-number">06</span>
+                                <h2 class="project-title">MyAgent - AI智能代理</h2>
+                            </div>
+                            <div class="project-content project-content-single">
+                                <div class="project-description">
+                                    <div class="info-grid">
+                                        <div class="info-block">
+                                            <h3>项目背景</h3>
+                                            <p>基于ReAct（推理+行动）范式构建的桌面智能代理系统。该项目整合了视觉语言模型与自动化控制工具，能够理解用户自然语言指令，自动识别屏幕元素并执行相应的操作，实现桌面自动化任务。</p>
+                                        </div>
+                                        <div class="info-block">
+                                            <h3>项目总结</h3>
+                                            <p>通过构建完整的Agent系统，深入理解了AI Agent的工作原理。项目整合了多个技术栈，包括VLM视觉识别、ReAct决策框架、自动化控制和向量数据库等，锻炼了系统架构和集成能力。</p>
+                                            <div class="project-links" style="margin-top: 12px; padding-top: 0; border-top: none;">
+                                                <span class="project-path">📁 项目路径: C:\Users\mark0\myagent</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tech-section">
+                                        <div class="tech-column">
+                                            <h3>核心模块</h3>
+                                            <ul>
+                                                <li><strong>ReAct框架</strong> — 推理与行动循环的Agent架构</li>
+                                                <li><strong>视觉理解</strong> — Qwen2.5-VL和OmniParser屏幕元素识别</li>
+                                                <li><strong>计算机控制</strong> — Windows-MCP + DeepSeek API快速决策</li>
+                                                <li><strong>本地记忆</strong> — SQLite和Qdrant混合记忆系统</li>
+                                                <li><strong>模型部署</strong> — OpenVINO模型量化和推理加速</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="workflow-section">
+                                <h3>系统架构</h3>
+                                <div class="workflow-diagram-large">
+                                    <img src="myagent-workflow.svg" alt="MyAgent工作流程" />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 未来学习计划 -->
+                    <section class="project-section" id="future-plan">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <span class="project-number">07</span>
+                                <h2 class="project-title">正在进行的项目</h2>
+                            </div>
+                            <div class="project-content">
+                                <div class="project-description">
+                                    <div class="learning-context">
+                                        <h3>学习方向</h3>
+                                        <p>在完成了基础项目实践后，我计划深入学习计算机视觉和机器学习的核心领域，将理论知识与实际应用相结合，逐步建立系统的技术能力。</p>
+                                    </div>
+                                    <div class="project-details">
+                                        <h3>下一阶段目标</h3>
+                                        <ul>
+                                            <li><strong>图像分割研究</strong> — 已部署SAM和MMSegmentation，准备展开对图像分割领域的研究，学习实例分割、语义分割等核心技术</li>
+                                            <li><strong>医学图像处理</strong> — 研究医学图像处理算法库，探索深度学习在医疗影像诊断中的应用，如CT、MRI图像分析</li>
+                                            <li><strong>机器学习原理</strong> — 深入了解机器学习的原理，系统学习优化算法、正则化方法、模型评估等基础知识</li>
+                                        </ul>
+                                        <h3>论文复现学习</h3>
+                                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">计划学习并尝试复现组内学长学姐的研究成果：</p>
+                                        <ul>
+                                            <li><strong>VSR-Net</strong> (IEEE TIP 2023) — 血管样结构修复网络，利用图聚类方法修复分割结果中的断裂结构，解决血管/神经纤维等细长结构分割的断裂问题</li>
+                                            <li><strong>GCIN</strong> (Displays 2024) — 图置信度交互校准网络，用于DSA图像中颅内动脉瘤病变的实例分割，解决小目标分割和边界模糊问题</li>
+                                        </ul>
+                                        <div class="learning-reflection">
+                                            <h3>未来展望</h3>
+                                            <p>希望通过系统性的学习，能够将所学技术应用到实际问题中。图像分割和医学图像处理是计算机视觉的重要方向，具有广泛的应用前景。同时打好机器学习的理论基础，为后续更深入的AI研究奠定基础。</p>
+                                        </div>
+                                        <div class="confusion-section" style="margin-top: 20px; padding: 16px 18px; background: #f8fafc; border-radius: var(--radius); border-left: 2px solid var(--accent);">
+                                            <h3 style="font-size: 0.7rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px;">困惑与期待</h3>
+                                            <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7;">在AI领域的学习过程中，我经历了从模型训练（Text-to-SVG）、模型部署应用（MyAgent使用OpenVINO和DeepSeek API）到医学影像结合（SAM分割、论文复现）的不同阶段。现在正准备深入医学图像分割领域，但不确定这样的学习路径是否合理，也不知道在模型训练、部署优化和医学影像应用这几个方向上应该如何分配精力。希望导师能够指点我的学习方向是否正确，以及下一步应该重点深入哪个方面。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-media">
+                                    <div class="sam-demo">
+                                        <h3>SAM 医学图像分割实践</h3>
+                                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 16px;">使用 Segment Anything Model 进行医学图像分割的初步实验</p>
+                                        <div class="sam-images">
+                                            <div class="sam-item">
+                                                <img src="vessel_mask.png" alt="分割掩码" />
+                                                <span class="sam-label">分割掩码</span>
+                                            </div>
+                                            <div class="sam-item">
+                                                <img src="vessel_overlay.png" alt="叠加效果" />
+                                                <span class="sam-label">叠加效果</span>
+                                            </div>
+                                            <div class="sam-item">
+                                                <img src="vessel_blended.png" alt="混合显示" />
+                                                <span class="sam-label">混合显示</span>
+                                            </div>
+                                            <div class="sam-item">
+                                                <img src="visualization.png" alt="可视化结果" />
+                                                <span class="sam-label">可视化结果</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ui-design-section" style="margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border);">
+                                        <h3>医学影像AI分割系统UI设计</h3>
+                                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 16px;">为后续医学影像AI分割项目设计的交互界面框架</p>
+                                        <div class="ui-design-showcase">
+                                            <div class="ui-main-image">
+                                                <img src="13 DICOM-阈值分割.png" alt="医学影像AI分割UI设计" />
+                                            </div>
+                                            <div class="ui-features">
+                                                <div class="ui-feature-item">
+                                                    <span class="ui-feature-icon">◈</span>
+                                                    <div class="ui-feature-text">
+                                                        <strong>DICOM影像阅片</strong>
+                                                        <span>支持CT/MRI多序列浏览，窗宽窗位调节</span>
+                                                    </div>
+                                                </div>
+                                                <div class="ui-feature-item">
+                                                    <span class="ui-feature-icon">✎</span>
+                                                    <div class="ui-feature-text">
+                                                        <strong>AI辅助分割</strong>
+                                                        <span>集成SAM等模型，支持一键AI分割与手动修正</span>
+                                                    </div>
+                                                </div>
+                                                <div class="ui-feature-item">
+                                                    <span class="ui-feature-icon">◉</span>
+                                                    <div class="ui-feature-text">
+                                                        <strong>ROI量化分析</strong>
+                                                        <span>实时计算HU值、体积、密度等影像指标</span>
+                                                    </div>
+                                                </div>
+                                                <div class="ui-feature-item">
+                                                    <span class="ui-feature-icon">⚏</span>
+                                                    <div class="ui-feature-text">
+                                                        <strong>患者管理系统</strong>
+                                                        <span>多患者、多时间点检查数据管理</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content" style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+                <div class="logos-row" style="display: flex; align-items: center; gap: 32px;">
+                    <img src="download.png" alt="南方科技大学" style="height: 40px; width: auto; opacity: 0.7;" />
+                    <img src="imed.png" alt="课题组" style="height: 50px; width: auto; opacity: 0.8;" />
+                </div>
+                <p>&copy; 2026 学习总结 | 持续学习，不断进步</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="back-to-top" aria-label="返回顶部">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

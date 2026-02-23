@@ -1,0 +1,21 @@
+{
+  "name": "learning-summary",
+  "version": "1.0.0",
+  "description": "学期与寒假学习总结展示网站",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8000 -o",
+    "dev": "npx http-server -p 8000 -o"
+  },
+  "keywords": [
+    "portfolio",
+    "learning",
+    "projects"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
+
